@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@services/*": ["./src/services/*"],
+      "@storage/*": ["./src/storage/*"],
+      "@axios/*": ["./src/axios/*"]
+    },
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"]
+  },
+  "extends": "@react-native/typescript-config",
+  "include": ["**/*.ts", "**/*.tsx", "index.d.ts"],
+  "exclude": ["**/node_modules", "**/Pods"]
+}

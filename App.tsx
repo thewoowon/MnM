@@ -17,6 +17,7 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useGoogleAuth } from '@thewoowon/google-rn';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { PerfMonitorProvider, useRenderCount } from 'react-native-perf-hud';
 
 // Google OAuth 설정
 const { GoogleAuthModule } = NativeModules;
@@ -48,18 +49,22 @@ function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <GestureHandlerRootView>
-      <SafeAreaProvider>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <AppContent />
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
+    <PerfMonitorProvider config={{ enabled: __DEV__, position: 'top-right' }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <SafeAreaProvider>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+          <AppContent />
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
+    </PerfMonitorProvider>
   );
 }
 
 function AppContent() {
   const { user, loading, signIn, signOut, isAuthenticated, getAccessToken } =
     useGoogleAuth();
+
+  const render = useRenderCount('AppContent');
 
   useEffect(() => {
     // Google OAuth 설정 (앱 시작시 한번만)
@@ -114,6 +119,9 @@ function AppContent() {
       <View style={styles.header}>
         <Text style={styles.title}>🎬 Movie & Me</Text>
         <Text style={styles.subtitle}>with Google Sign-In</Text>
+        <Text style={{ color: '#999', marginTop: 4 }}>
+          렌더링 횟수: {render}
+        </Text>
       </View>
 
       {loading ? (

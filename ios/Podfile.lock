@@ -1812,6 +1812,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - react-native-perf-hud (0.4.2):
+    - React-Core
   - react-native-randombytes (3.6.2):
     - React-Core
   - react-native-safe-area-context (5.6.2):
@@ -2783,6 +2785,7 @@ DEPENDENCIES:
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-encrypted-storage (from `../node_modules/react-native-encrypted-storage`)
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
+  - react-native-perf-hud (from `../node_modules/react-native-perf-hud`)
   - react-native-randombytes (from `../node_modules/react-native-randombytes`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -2916,6 +2919,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-encrypted-storage"
   react-native-get-random-values:
     :path: "../node_modules/react-native-get-random-values"
+  react-native-perf-hud:
+    :path: "../node_modules/react-native-perf-hud"
   react-native-randombytes:
     :path: "../node_modules/react-native-randombytes"
   react-native-safe-area-context:
@@ -3042,6 +3047,7 @@ SPEC CHECKSUMS:
   React-microtasksnativemodule: d1ee999dc9052e23f6488b730fa2d383a4ea40e5
   react-native-encrypted-storage: 569d114e329b1c2c2d9f8c84bcdbe4478dda2258
   react-native-get-random-values: e2acf4070fe4b7325705a05af047449637a27a21
+  react-native-perf-hud: f0b284eed8e4b3d0d8c03f513edc1e113b3300c8
   react-native-randombytes: 4eeddad82d1fd57adda1cd5beffe67d041c9d6de
   react-native-safe-area-context: c00143b4823773bba23f2f19f85663ae89ceb460
   React-NativeModulesApple: 46690a0fe94ec28fc6fc686ec797b911d251ded0
@@ -3085,6 +3091,6 @@ SPEC CHECKSUMS:
   thewoowon-google-rn: bcdd4f0ec3f16f0fcebd6a6509b4ed2467a1668f
   Yoga: 689c8e04277f3ad631e60fe2a08e41d411daf8eb
 
-PODFILE CHECKSUM: fa2385dd61ab0a8a3ca711d59361caaec9f101d1
+PODFILE CHECKSUM: aad9a051e1359b937e6668baa8093825220a7afe
 
 COCOAPODS: 1.16.2

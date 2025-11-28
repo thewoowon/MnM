@@ -1,7 +1,7 @@
 // theme.ts
 export const theme = {
   colors: {
-    primary: '#FFD459',
+    primary: '#171717',
     secondary: '#4BB2FF',
     subpointRed: '#EF444D',
     subpointGreen: '#69D441',

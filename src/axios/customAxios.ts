@@ -37,7 +37,7 @@ customAxios.interceptors.request.use(async config => {
   if (
     (config.url?.startsWith(`${API_PREFIX}/auth`) &&
       !config.url?.startsWith(`${API_PREFIX}/auth/withdraw`)) ||
-    config.url?.startsWith(`${API_PREFIX}/verify`)
+    config.url?.startsWith(`${API_PREFIX}/users/verify`)
   ) {
     return config;
   }

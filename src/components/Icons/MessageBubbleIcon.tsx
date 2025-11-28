@@ -5,7 +5,7 @@ const MessageBubbleIcon = ({
   width = 129,
   height = 42,
   color = '#212121',
-  text = '마감벨',
+  text = 'Message',
 }) => (
   <Svg width={width} height={height} viewBox="0 0 129 42" fill="none">
     <Rect width="129" height="32" rx="6" fill={color} />

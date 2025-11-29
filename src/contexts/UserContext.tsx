@@ -1,10 +1,9 @@
-import React, {createContext, useContext, useState, ReactNode} from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type User = {
   email: string;
-  nickname: string;
-  // 사용자 Role (예: 일반 사용자, 사장님 등)
-  role: 'CUSTOMER' | 'OWNER' | 'ADMIN';
+  name: string;
+  photoUrl?: string;
 };
 
 type UserContextType = {
@@ -18,7 +17,7 @@ type UserContextType = {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-export const UserProvider = ({children}: {children: ReactNode}) => {
+export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUserState] = useState<User | null>(null);
   const [isGuest, setIsGuest] = useState<boolean>(false);
 
@@ -34,7 +33,8 @@ export const UserProvider = ({children}: {children: ReactNode}) => {
 
   return (
     <UserContext.Provider
-      value={{user, isLoggedIn, isGuest, setUser, resetUser, setIsGuest}}>
+      value={{ user, isLoggedIn, isGuest, setUser, resetUser, setIsGuest }}
+    >
       {children}
     </UserContext.Provider>
   );

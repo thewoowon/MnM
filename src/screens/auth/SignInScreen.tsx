@@ -138,7 +138,7 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
   // APPROVED, REJECTED, WAITING
   const fetchMyInfo = async () => {
     try {
-      const response = await customAxios.get(`${API_PREFIX}/user/me`);
+      const response = await customAxios.get(`${API_PREFIX}/users/me`);
       if (response.status !== 200) {
         throw new Error('Failed to fetch my info');
       }
@@ -251,14 +251,6 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
       if (!user) {
         throw new Error('Google user information is missing after sign-in.');
       }
-      // user: { emailVerified: true,
-      //   photoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocLC9c2DR0QXADrNjYKh2GCo0Pfy2xYoHUwPk9vdpSQU6KmkhA=s96-c',
-      //   givenName: '원',
-      //   email: 'thewoowon76@gmail.com',
-      //   name: '우원',
-      //   familyName: '우',
-      //   locale: '',
-      //   id: '103979572077192772627' }
 
       console.log('Google User Info:', user);
       // 2. 서버에 기존 유저인지 검증 요청

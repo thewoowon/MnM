@@ -27,12 +27,12 @@ const RootNavigator = () => {
       console.log('Current user:', user);
       if (isAuthenticated && !user) {
         try {
-          const res = await customAxios.get(`${API_PREFIX}/user/me`);
+          const res = await customAxios.get(`${API_PREFIX}/users/me`);
           console.log('Fetched user data:', res.data);
           setUser({
             email: res.data.data.email,
-            nickname: res.data.data.nickname,
-            role: res.data.data.userRole,
+            name: res.data.data.name,
+            photoUrl: res.data.data.profile_pic,
           });
 
           navigation.reset({
@@ -44,17 +44,10 @@ const RootNavigator = () => {
           setIsAuthenticated(false);
         }
       } else if (isAuthenticated && user) {
-        if (user?.role === 'OWNER') {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'Owner', params: { screen: 'OwnerScreen' } }],
-          });
-        } else {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'Tabs', params: { screen: 'MainScreen' } }],
-          });
-        }
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Tabs', params: { screen: 'MainScreen' } }],
+        });
       }
     };
     redirectBasedOnRole();

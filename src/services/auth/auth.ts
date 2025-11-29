@@ -59,7 +59,7 @@ export const validateAccessToken = async (): Promise<boolean> => {
       // accessToken이 없으면 무조건 false
       return false;
     }
-    const response = await customAxios.get(`${API_PREFIX}/user/me`);
+    const response = await customAxios.get(`${API_PREFIX}/users/me`);
     return response.status === 200;
   } catch (e: any) {
     // refreshToken에 의해 내부적으로 재시도 되었을 수 있음
@@ -76,7 +76,7 @@ export const validateAccessToken = async (): Promise<boolean> => {
 
       // 재발급 후 토큰이 있다면 다시 한번 호출해봄
       try {
-        const retry = await customAxios.get(`${API_PREFIX}/user/me`);
+        const retry = await customAxios.get(`${API_PREFIX}/users/me`);
         return retry.status === 200;
       } catch (e2) {
         return false;

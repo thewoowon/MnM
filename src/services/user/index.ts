@@ -7,7 +7,7 @@ export const useMe = () => {
   return useQuery({
     queryKey: ['user', 'me'],
     queryFn: async () => {
-      const response = await customAxios.get(`${API_PREFIX}/user/me`);
+      const response = await customAxios.get(`${API_PREFIX}/users/me`);
 
       if (response.status !== 200)
         throw new Error('Failed to fetch user profile');

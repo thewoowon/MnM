@@ -1,6 +1,12 @@
 import React from 'react';
-import {Text, Pressable, ViewStyle, TextStyle, StyleSheet} from 'react-native';
-import {useTheme} from '../../../contexts/ThemeContext';
+import {
+  Text,
+  Pressable,
+  ViewStyle,
+  TextStyle,
+  StyleSheet,
+} from 'react-native';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 type PrimaryButtonProps = {
   title: string;
@@ -19,7 +25,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   textStyle,
   fullWidth = false,
 }) => {
-  const {colors, borderRadius, fontSize} = useTheme();
+  const { colors, borderRadius, fontSize } = useTheme();
 
   return (
     <Pressable
@@ -34,8 +40,9 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         fullWidth && styles.fullWidth,
         disabled && styles.disabled,
         style,
-      ]}>
-      <Text style={[{fontSize: fontSize.md}, styles.buttonText, textStyle]}>
+      ]}
+    >
+      <Text style={[{ fontSize: fontSize.md }, styles.buttonText, textStyle]}>
         {title}
       </Text>
     </Pressable>
@@ -52,7 +59,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonText: {
-    color: '#212121',
+    color: '#FFFFFF',
     fontWeight: 'bold',
     lineHeight: 24,
   },

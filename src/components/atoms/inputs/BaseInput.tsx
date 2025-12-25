@@ -1,5 +1,5 @@
 // components/form/Input.tsx
-import React, {useState, forwardRef} from 'react';
+import React, { useState, forwardRef } from 'react';
 import {
   TextInput,
   View,
@@ -8,7 +8,7 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import {useTheme} from '../../../contexts/ThemeContext';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 type InputProps = TextInputProps & {
   label?: string;
@@ -17,12 +17,12 @@ type InputProps = TextInputProps & {
 };
 
 const BaseInput = forwardRef<TextInput, InputProps>(
-  ({label, error, style, boxStyle, ...props}, ref) => {
-    const {colors, spacing, borderRadius, fontSize} = useTheme();
+  ({ label, error, style, boxStyle, ...props }, ref) => {
+    const { colors, spacing, borderRadius, fontSize } = useTheme();
     const [focused, setFocused] = useState(false);
 
     return (
-      <View style={[{marginBottom: spacing.md}, boxStyle]}>
+      <View style={[{ marginBottom: spacing.md }, boxStyle]}>
         {label && (
           <Text
             style={{
@@ -32,7 +32,8 @@ const BaseInput = forwardRef<TextInput, InputProps>(
               fontWeight: 'bold',
               lineHeight: 24,
               paddingLeft: 16,
-            }}>
+            }}
+          >
             {label}
           </Text>
         )}
@@ -68,7 +69,8 @@ const BaseInput = forwardRef<TextInput, InputProps>(
               fontSize: fontSize.sm,
               marginTop: 4,
               paddingLeft: 20,
-            }}>
+            }}
+          >
             {error}
           </Text>
         )}

@@ -10,7 +10,7 @@ const BASE_URL = Platform.select({
 
 const customAxios = axios.create({
   baseURL: BASE_URL,
-  timeout: 10000,
+  timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -73,8 +73,9 @@ customAxios.interceptors.response.use(
       config: originalRequest,
     });
 
+    console.log('isTokenError:', isTokenError);
     if (isTokenError) {
-      const errorCode = reponseData?.code;
+      const errorCode = reponseData?.detail.code;
 
       if (errorCode === 'JWT_VALIDATE_ERROR') {
         console.warn(
@@ -87,6 +88,7 @@ customAxios.interceptors.response.use(
         return handleAuthFailure(error); // 재시도 없이 바로 실패 처리
       }
 
+      console.log('errorCode:', errorCode);
       if (errorCode === 'JWT_VERIFY_EXPIRED') {
         console.warn('Token expired, attempting to refresh token...');
 
@@ -98,6 +100,7 @@ customAxios.interceptors.response.use(
 
         const refreshToken = await getRefreshToken();
         if (!refreshToken) {
+          console.warn('No refresh token available.');
           return handleAuthFailure(error);
         }
 

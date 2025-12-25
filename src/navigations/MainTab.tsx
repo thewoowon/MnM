@@ -5,7 +5,7 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import { MainStack } from '../screens/main';
-
+import { TicketStack } from '../screens/ticket';
 import { MyPageStack } from '@screens/myPage';
 import {
   HomeIcon,
@@ -69,24 +69,6 @@ const CustomTabBar = (props: any) => {
 // 탭바를 숨길 자식 스크린들의 이름(스택 안의 screen name)
 const HIDE_TABBAR_ON: Record<string, true> = {
   MainDetailScreen: true,
-  MainLocationScreen: true,
-  MainAddressScreen: true,
-  MainNoticeScreen: true,
-  MainPaymentScreen: true,
-  MainCompleteLayer1Screen: true,
-  MainCompleteLayer2Screen: true,
-  MainPortOneScreen: true,
-  MainSearchStoreScreen: true,
-  MainGuideLayer1Screen: true,
-  MainGuideLayer2Screen: true,
-  MainStoreReviewScreen: true,
-  OrderDetailScreen: true,
-  OrderReviewScreen: true,
-  OrderWriteScreen: true,
-  ReviewManagementScreen: true,
-  CustomerServiceScreen: true,
-  WithdrawalScreen: true,
-  EditProfileScreen: true,
 };
 
 function getDeepFocusedRouteNameFromState(state: any): string | undefined {
@@ -94,8 +76,6 @@ function getDeepFocusedRouteNameFromState(state: any): string | undefined {
   // 활성 탭
   let current = state?.routes?.[state.index];
   let nested = current?.state;
-  console.log('current', current);
-  console.log('nested', nested);
 
   // 탭 → (스택) → (더 깊은 네비게이터 …) 끝까지 내려감
   while (nested && nested.index != null) {
@@ -158,7 +138,7 @@ const MainTab = () => {
       sceneContainerStyle={{ backgroundColor: '#fff' }}
       screenOptions={({ route }: { route: any }) => ({
         headerShown: false,
-        tabBarStyle: VISIBLE_TABBAR,
+        tabBarStyle: { display: 'none' },
         // safeAreaInsets:
         //   getLeafRouteName(route) && HIDE_TABBAR_ON[getLeafRouteName(route)!]
         //     ? {bottom: 0}
@@ -210,7 +190,28 @@ const MainTab = () => {
           ),
         }}
       />
-
+      <Tabs.Screen
+        name="Ticket"
+        component={TicketStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <HomeIcon color={focused ? 'black' : '#C7CDD1'} />
+          ),
+          tabBarLabel: ({ focused }: { focused: boolean }) => (
+            <Text
+              style={[
+                styles.tabBarItemTextStyle,
+                {
+                  color: focused ? scale.gray.gray1 : scale.gray.gray5,
+                },
+              ]}
+            >
+              티켓
+            </Text>
+          ),
+        }}
+      />
       <Tabs.Screen
         name="MyPage"
         component={MyPageStack}

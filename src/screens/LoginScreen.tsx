@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import {
   View,
   Text,
@@ -7,13 +7,13 @@ import {
   ActivityIndicator,
   Alert,
 } from 'react-native';
-import {useGoogleLogin} from '@hooks/useGoogleLogin';
-import {AuthContext} from '@contexts/AuthContext';
-import {GoogleIcon} from '@components/Icons/SocialIcons/GoogleIcon';
+import { useGoogleLogin } from '@hooks/useGoogleLogin';
+import { AuthContext } from '@contexts/AuthContext';
+import GoogleIcon from '@components/Icons/SocialIcons/GoogleIcon';
 
 export const LoginScreen = () => {
-  const {signInWithGoogle, isLoading} = useGoogleLogin();
-  const {setIsAuthenticated, initializeAuth} = useContext(AuthContext)!;
+  const { signInWithGoogle, isLoading } = useGoogleLogin();
+  const { setIsAuthenticated, initializeAuth } = useContext(AuthContext)!;
   const [autoLogin, setAutoLogin] = useState(false);
 
   const handleGoogleLogin = async () => {
@@ -39,7 +39,8 @@ export const LoginScreen = () => {
         <TouchableOpacity
           style={styles.googleButton}
           onPress={handleGoogleLogin}
-          disabled={isLoading}>
+          disabled={isLoading}
+        >
           {isLoading ? (
             <ActivityIndicator color="#fff" />
           ) : (
@@ -52,12 +53,9 @@ export const LoginScreen = () => {
 
         <TouchableOpacity
           style={styles.autoLoginCheckbox}
-          onPress={() => setAutoLogin(!autoLogin)}>
-          <View
-            style={[
-              styles.checkbox,
-              autoLogin && styles.checkboxChecked,
-            ]}>
+          onPress={() => setAutoLogin(!autoLogin)}
+        >
+          <View style={[styles.checkbox, autoLogin && styles.checkboxChecked]}>
             {autoLogin && <Text style={styles.checkmark}>✓</Text>}
           </View>
           <Text style={styles.autoLoginText}>자동 로그인</Text>

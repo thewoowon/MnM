@@ -7,24 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-MovieAndMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MovieAndMe.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D44F6B1FC48542EBB956B579 /* libPods-MovieAndMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */; };
 		D6742066E582310779850DC0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		59D9961873B2449F92FF2F47 /* Galmuri11-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */; };
+		0EDA41B5FAD44114AA3093A6 /* Galmuri11-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */; };
+		08EF67F857984872B5E5DC2A /* Galmuri11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */; };
+		EB926EA08F3047739388EBB6 /* Galmuri14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */; };
+		C0EBC795422140ADAEA432FD /* Galmuri7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5A850B85F044BF89597055 /* Galmuri7.ttf */; };
+		D36B9B2C04254FFF80C14B3B /* Galmuri9.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */; };
+		BCB6FC2519F04B719CFE391F /* GalmuriMono11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */; };
+		87A6AA79312845C2AC98A436 /* GalmuriMono7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */; };
+		57B920AF5B6B47438548EA93 /* GalmuriMono9.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CAB1AD6B45C0C2E55E1085B /* Pods-MovieAndMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.release.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MovieAndMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAndMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MovieAndMe/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MovieAndMe/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = MovieAndMe/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-MovieAndMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.debug.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-MovieAndMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.release.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.release.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-MovieAndMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieAndMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		550B03AC0E26215D65F349DB /* Pods-MovieAndMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.debug.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.debug.xcconfig"; sourceTree = "<group>"; };
+		73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieAndMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MovieAndMe/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MovieAndMe/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */ = {isa = PBXFileReference; name = "Galmuri11-Bold.ttf"; path = "../src/assets/fonts/Galmuri11-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */ = {isa = PBXFileReference; name = "Galmuri11-Condensed.ttf"; path = "../src/assets/fonts/Galmuri11-Condensed.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */ = {isa = PBXFileReference; name = "Galmuri11.ttf"; path = "../src/assets/fonts/Galmuri11.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */ = {isa = PBXFileReference; name = "Galmuri14.ttf"; path = "../src/assets/fonts/Galmuri14.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D5A850B85F044BF89597055 /* Galmuri7.ttf */ = {isa = PBXFileReference; name = "Galmuri7.ttf"; path = "../src/assets/fonts/Galmuri7.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */ = {isa = PBXFileReference; name = "Galmuri9.ttf"; path = "../src/assets/fonts/Galmuri9.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */ = {isa = PBXFileReference; name = "GalmuriMono11.ttf"; path = "../src/assets/fonts/GalmuriMono11.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */ = {isa = PBXFileReference; name = "GalmuriMono7.ttf"; path = "../src/assets/fonts/GalmuriMono7.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */ = {isa = PBXFileReference; name = "GalmuriMono9.ttf"; path = "../src/assets/fonts/GalmuriMono9.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-MovieAndMe.a in Frameworks */,
+				D44F6B1FC48542EBB956B579 /* libPods-MovieAndMe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-MovieAndMe.a */,
+				73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +93,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				172C4C5383484B81B89C189C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -92,11 +111,28 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-MovieAndMe.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-MovieAndMe.release.xcconfig */,
+				550B03AC0E26215D65F349DB /* Pods-MovieAndMe.debug.xcconfig */,
+				0CAB1AD6B45C0C2E55E1085B /* Pods-MovieAndMe.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		172C4C5383484B81B89C189C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */,
+				8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */,
+				5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */,
+				34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */,
+				6D5A850B85F044BF89597055 /* Galmuri7.ttf */,
+				6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */,
+				02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */,
+				5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */,
+				2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -105,13 +141,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MovieAndMe" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				5B9FFC7DECA6CBD013188353 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				004A9E5B1D4054554ECD8103 /* [CP] Embed Pods Frameworks */,
+				44524E1102DAC145BECAA3CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,12 +197,38 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				D6742066E582310779850DC0 /* PrivacyInfo.xcprivacy in Resources */,
+				59D9961873B2449F92FF2F47 /* Galmuri11-Bold.ttf in Resources */,
+				0EDA41B5FAD44114AA3093A6 /* Galmuri11-Condensed.ttf in Resources */,
+				08EF67F857984872B5E5DC2A /* Galmuri11.ttf in Resources */,
+				EB926EA08F3047739388EBB6 /* Galmuri14.ttf in Resources */,
+				C0EBC795422140ADAEA432FD /* Galmuri7.ttf in Resources */,
+				D36B9B2C04254FFF80C14B3B /* Galmuri9.ttf in Resources */,
+				BCB6FC2519F04B719CFE391F /* GalmuriMono11.ttf in Resources */,
+				87A6AA79312845C2AC98A436 /* GalmuriMono7.ttf in Resources */,
+				57B920AF5B6B47438548EA93 /* GalmuriMono9.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		004A9E5B1D4054554ECD8103 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,28 +245,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		44524E1102DAC145BECAA3CD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		5B9FFC7DECA6CBD013188353 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,27 +284,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,7 +300,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-MovieAndMe.debug.xcconfig */;
+			baseConfigurationReference = 550B03AC0E26215D65F349DB /* Pods-MovieAndMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -295,7 +332,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-MovieAndMe.release.xcconfig */;
+			baseConfigurationReference = 0CAB1AD6B45C0C2E55E1085B /* Pods-MovieAndMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

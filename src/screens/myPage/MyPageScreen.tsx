@@ -11,7 +11,7 @@ import CircularProgressProfile from '@components/molecules/CircularProgressProfi
 import { useTheme } from '@contexts/ThemeContext';
 import useAuth from '@hooks/useAuth';
 import { confirm } from '@utils/confirm';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Alert,
   Image,
@@ -36,20 +36,36 @@ import Animated, {
   useAnimatedReaction,
 } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Header from '@components/layout/Header';
+import { useUser } from '@contexts/UserContext';
 
 const MyPageScreen = ({ navigation, route }: any) => {
+  const { colors } = useTheme();
   const { setIsAuthenticated } = useAuth();
   const { scale } = useTheme();
   const [isSpeechBoxVisible, setIsSpeechBoxVisible] = useState(false);
+  const { user } = useUser();
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: colors.primary,
+        },
+      ]}
+    >
       <StatusBar
         barStyle="dark-content"
         backgroundColor="#6a51ae"
         translucent={false}
       />
       <SafeAreaView style={styles.backgroundStyle}>
+        <Header
+          title="마이페이지"
+          onPress={() => navigation.goBack()}
+          isBack={true}
+        />
         <View
           style={[
             styles.flexBox,
@@ -59,7 +75,77 @@ const MyPageScreen = ({ navigation, route }: any) => {
               paddingVertical: 18,
             },
           ]}
-        ></View>
+        >
+          <View
+            style={{
+              width: 80,
+              height: 80,
+              borderRadius: 40,
+              overflow: 'hidden',
+            }}
+          >
+            <Image
+              source={
+                user?.photoUrl
+                  ? { uri: `${API_PREFIX}${user.photoUrl}` }
+                  : require('@assets/images/default_profile.png')
+              }
+              style={{ width: '100%', height: '100%' }}
+              resizeMode="cover"
+            />
+          </View>
+          <Text style={styles.nameText}>{user?.name}</Text>
+          <Text style={styles.emailText}>{user?.email}</Text>
+          <View
+            style={[
+              styles.carbohydrateBox,
+              {
+                marginTop: 8,
+                backgroundColor: 'rgba(93, 182, 100, 0.1)',
+                paddingHorizontal: 8,
+                paddingVertical: 4,
+              },
+            ]}
+          >
+            <Text style={styles.carbohydrateBoxText}>보유 코인</Text>
+            <Text style={styles.carbohydrateBoxValueText}>0 코인</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            marginTop: 20,
+            borderTopWidth: 1,
+            borderTopColor: '#E0E0E0',
+          }}
+        >
+          <Pressable
+            style={styles.listBox}
+            onPress={() =>
+              navigation.navigate('Ticket', {
+                screen: 'TicketScreen',
+              })
+            }
+          >
+            <Text style={styles.listText}>보관함</Text>
+            <RightChevronIcon color="#212121" />
+          </Pressable>
+          <Pressable
+            style={styles.listBox}
+            onPress={async () => {
+              const result = await confirm(
+                '로그아웃',
+                '로그아웃 하시겠습니까?',
+              );
+              if (result) {
+                await logout();
+                setIsAuthenticated(false);
+              }
+            }}
+          >
+            <Text style={styles.listText}>로그아웃</Text>
+            <RightChevronIcon color="#212121" />
+          </Pressable>
+        </View>
       </SafeAreaView>
     </View>
   );

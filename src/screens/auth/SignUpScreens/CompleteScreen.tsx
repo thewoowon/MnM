@@ -67,7 +67,6 @@ const CompleteScreen = ({ navigation, route }: any) => {
             }}
           />
         </View>
-        v
       </SafeAreaView>
     </View>
   );

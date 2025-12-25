@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Galmuri11-Bold.ttf",
+      "sha1": "2ca6ea5d05c073fba455029c7b034b56393a246c"
+    },
+    {
+      "path": "src/assets/fonts/Galmuri11-Condensed.ttf",
+      "sha1": "3c12250de42d15f9d01ffdab8cc0bf09d8f02db5"
+    },
+    {
+      "path": "src/assets/fonts/Galmuri11.ttf",
+      "sha1": "4a22b17de45cc7511866521f01bfaf38bcfa9c8a"
+    },
+    {
+      "path": "src/assets/fonts/Galmuri14.ttf",
+      "sha1": "1589bec2cadbb7a88d5d5af8f19f372c66eb8be9"
+    },
+    {
+      "path": "src/assets/fonts/Galmuri7.ttf",
+      "sha1": "c9718e6d3365a67e4db90750f6217ce96f550ae1"
+    },
+    {
+      "path": "src/assets/fonts/Galmuri9.ttf",
+      "sha1": "e6bfecdd01ee199adead6976cfcd0b7cf8481de1"
+    },
+    {
+      "path": "src/assets/fonts/GalmuriMono11.ttf",
+      "sha1": "a915e32ccc8b3317c94a50de28e8990c27f92860"
+    },
+    {
+      "path": "src/assets/fonts/GalmuriMono7.ttf",
+      "sha1": "6a6af523790dd59feb62473b42f7124b22c042e3"
+    },
+    {
+      "path": "src/assets/fonts/GalmuriMono9.ttf",
+      "sha1": "73eabb55e0ba6f30580cbdb748d81d1086f46b38"
+    }
+  ]
+}

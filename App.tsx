@@ -117,22 +117,20 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <PerfMonitorProvider config={{ enabled: __DEV__, position: 'top-right' }}>
-        <ToastProvider>
-          <AuthProvider>
-            <ThemeProvider>
-              <PermissionProvider>
-                <ModalProvider>
-                  <SessionProvider>
-                    <AppContent />
-                    <GlobalModalRenderer />
-                  </SessionProvider>
-                </ModalProvider>
-              </PermissionProvider>
-            </ThemeProvider>
-          </AuthProvider>
-        </ToastProvider>
-      </PerfMonitorProvider>
+      <ToastProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            <PermissionProvider>
+              <ModalProvider>
+                <SessionProvider>
+                  <AppContent />
+                  <GlobalModalRenderer />
+                </SessionProvider>
+              </ModalProvider>
+            </PermissionProvider>
+          </ThemeProvider>
+        </AuthProvider>
+      </ToastProvider>
     </QueryClientProvider>
   );
 }

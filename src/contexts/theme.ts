@@ -9,7 +9,7 @@ export const theme = {
     background: '#FFFFFF',
     text: '#333333',
     disabled: '#F6F6F6',
-    gray: '#7F7F7F',
+    gray: '#6A6C5E',
     black: '#000000',
     white: '#FFFFFF',
     lightest: '#FFF8E6',

@@ -1,5 +1,5 @@
-import {LeftChevronIcon} from '@components/Icons';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import { LeftChevronIcon } from '@components/Icons';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 type HeaderProps = {
   onPress?: () => void;
@@ -26,9 +26,10 @@ const Header = ({
             flexDirection: 'row',
             position: 'absolute',
             left: 16,
-          }}>
+          }}
+        >
           <Pressable onPress={onPress}>
-            <LeftChevronIcon />
+            <LeftChevronIcon color="#F8F5CC" />
           </Pressable>
         </View>
       )}
@@ -40,7 +41,8 @@ const Header = ({
           right: 16,
           display: 'flex',
           flexDirection: 'row',
-        }}>
+        }}
+      >
         {rightButton && (
           <Pressable onPress={rightButtonAction}>{rightButton}</Pressable>
         )}
@@ -59,12 +61,11 @@ const styles = StyleSheet.create({
     paddingTop: 11,
     paddingBottom: 11,
     maxHeight: 50,
-    borderBottomWidth: 1,
-    borderColor: '#F2F4F6',
     zIndex: 1,
+    backgroundColor: 'transparent',
   },
   headerText: {
-    color: '#181818',
+    color: '#F8F5CC',
     fontSize: 18,
     fontFamily: 'Pretendard-SemiBold',
   },

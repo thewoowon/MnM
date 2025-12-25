@@ -43,7 +43,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -63,5 +63,17 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Galmuri11-Bold.ttf</string>
+		<string>Galmuri11-Condensed.ttf</string>
+		<string>Galmuri11.ttf</string>
+		<string>Galmuri14.ttf</string>
+		<string>Galmuri7.ttf</string>
+		<string>Galmuri9.ttf</string>
+		<string>GalmuriMono11.ttf</string>
+		<string>GalmuriMono7.ttf</string>
+		<string>GalmuriMono9.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -83,7 +83,7 @@ const MainResultScreen = ({ navigation, route }: any) => {
 
   useFocusEffect(
     React.useCallback(() => {
-      // fetchMovies();
+      fetchMovies();
     }, []),
   );
 

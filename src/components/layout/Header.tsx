@@ -61,13 +61,14 @@ const styles = StyleSheet.create({
     paddingTop: 11,
     paddingBottom: 11,
     maxHeight: 50,
+    minHeight: 50,
     zIndex: 1,
     backgroundColor: 'transparent',
   },
   headerText: {
     color: '#F8F5CC',
-    fontSize: 18,
-    fontFamily: 'Pretendard-SemiBold',
+    fontSize: 16,
+    fontFamily: 'GalmuriMono9',
   },
 });
 

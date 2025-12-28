@@ -21,6 +21,7 @@ import { useForm } from '@contexts/FormContext';
 import { useFocusEffect } from '@react-navigation/native';
 import LeftTextHeader from '@components/layout/LeftTextHeader';
 import { BookMarkIcon, RefreshIcon } from '@components/Icons';
+import ImageMaskViewer from '@components/molecules/ImageMaskViewer';
 
 const MainResultScreen = ({ navigation, route }: any) => {
   const { colors, scale } = useTheme();
@@ -40,8 +41,6 @@ const MainResultScreen = ({ navigation, route }: any) => {
   // YYYY년 M월 d일
   const formattedDate = format(new Date(), 'yyyy년 M월 d일');
 
-  console.log('Form data in MainResultScreen:', form);
-
   const fetchMovies = async () => {
     if (!form) return;
     try {
@@ -53,7 +52,6 @@ const MainResultScreen = ({ navigation, route }: any) => {
           top_k: 3,
         },
       );
-      console.log('Recommended movies response:', response.data);
       setResponse(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -63,19 +61,12 @@ const MainResultScreen = ({ navigation, route }: any) => {
 
   const saveTicket = async (movie: Movie) => {
     try {
-      // {
-      //   "movie_id": 0,
-      //   "purpose": "string",
-      //   "explanation": "string",
-      //   "comment": "string"
-      // }
       await customAxios.post(`${API_PREFIX}/tickets/`, {
         movie_id: movie.id,
         purpose: form?.value || '',
         explanation: response.explanation,
         comment: '',
       });
-      console.log('Movie saved to tickets:', movie.name);
     } catch (error) {
       console.error('Error saving movie to tickets:', error);
     }
@@ -152,7 +143,7 @@ const MainResultScreen = ({ navigation, route }: any) => {
                     gap: 60,
                   }}
                 >
-                  <View style={{ marginTop: 32, marginLeft: 20 }}>
+                  <View style={{ marginTop: 32 }}>
                     <Text style={styles.summary}>{response.explanation}</Text>
                   </View>
                   {response.movies.length === 0 ? (
@@ -166,18 +157,25 @@ const MainResultScreen = ({ navigation, route }: any) => {
                         alignItems: 'center',
                       }}
                     >
-                      <View>
+                      <View
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                        }}
+                      >
                         <Text style={styles.dateText}>{formattedDate}</Text>
                         <Text style={styles.titleText}>오늘의 영화</Text>
                       </View>
                       <View
                         style={{
                           position: 'relative',
-                          maxWidth: 314,
+                          // maxWidth: 314,
                           width: '100%',
                           height: 555,
                         }}
                       >
+                        {/* <ImageMaskViewer /> */}
                         <Image
                           source={require('@assets/images/movie_image_main.png')}
                           style={{ width: '100%', height: '100%' }}

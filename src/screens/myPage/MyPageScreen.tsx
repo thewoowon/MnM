@@ -1,17 +1,9 @@
-import {
-  AppleIcon,
-  CoinIcon,
-  DetailIcon,
-  KakaoIcon,
-  NaverIcon,
-  RightChevronIcon,
-  XIcon,
-} from '@components/Icons';
+import { RightChevronIcon } from '@components/Icons';
 import CircularProgressProfile from '@components/molecules/CircularProgressProfile';
 import { useTheme } from '@contexts/ThemeContext';
 import useAuth from '@hooks/useAuth';
 import { confirm } from '@utils/confirm';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { use, useState } from 'react';
 import {
   Alert,
   Image,
@@ -26,15 +18,6 @@ import { logout } from '@services/auth';
 import { useQuery } from '@tanstack/react-query';
 import customAxios from '@axios/customAxios';
 import { API_PREFIX } from '@env';
-// import BottomSheet, {
-//   BottomSheetView,
-//   BottomSheetScrollView,
-// } from '@gorhom/bottom-sheet';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  useAnimatedReaction,
-} from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '@components/layout/Header';
 import { useUser } from '@contexts/UserContext';
@@ -42,8 +25,6 @@ import { useUser } from '@contexts/UserContext';
 const MyPageScreen = ({ navigation, route }: any) => {
   const { colors } = useTheme();
   const { setIsAuthenticated } = useAuth();
-  const { scale } = useTheme();
-  const [isSpeechBoxVisible, setIsSpeechBoxVisible] = useState(false);
   const { user } = useUser();
 
   return (
@@ -82,12 +63,14 @@ const MyPageScreen = ({ navigation, route }: any) => {
               height: 80,
               borderRadius: 40,
               overflow: 'hidden',
+              backgroundColor: 'white',
+              marginBottom: 24,
             }}
           >
             <Image
               source={
                 user?.photoUrl
-                  ? { uri: `${API_PREFIX}${user.photoUrl}` }
+                  ? { uri: user.photoUrl }
                   : require('@assets/images/default_profile.png')
               }
               style={{ width: '100%', height: '100%' }}
@@ -96,20 +79,6 @@ const MyPageScreen = ({ navigation, route }: any) => {
           </View>
           <Text style={styles.nameText}>{user?.name}</Text>
           <Text style={styles.emailText}>{user?.email}</Text>
-          <View
-            style={[
-              styles.carbohydrateBox,
-              {
-                marginTop: 8,
-                backgroundColor: 'rgba(93, 182, 100, 0.1)',
-                paddingHorizontal: 8,
-                paddingVertical: 4,
-              },
-            ]}
-          >
-            <Text style={styles.carbohydrateBoxText}>보유 코인</Text>
-            <Text style={styles.carbohydrateBoxValueText}>0 코인</Text>
-          </View>
         </View>
         <View
           style={{
@@ -118,17 +87,6 @@ const MyPageScreen = ({ navigation, route }: any) => {
             borderTopColor: '#E0E0E0',
           }}
         >
-          <Pressable
-            style={styles.listBox}
-            onPress={() =>
-              navigation.navigate('Ticket', {
-                screen: 'TicketScreen',
-              })
-            }
-          >
-            <Text style={styles.listText}>보관함</Text>
-            <RightChevronIcon color="#212121" />
-          </Pressable>
           <Pressable
             style={styles.listBox}
             onPress={async () => {
@@ -176,82 +134,36 @@ const styles = StyleSheet.create({
   flexWrap: {
     flexWrap: 'wrap',
   },
-  carbohydrateText: {
-    color: '#5DB664',
-    fontSize: 16,
-    fontWeight: 'bold',
-    fontFamily: 'Pretendard-Bold',
-    lineHeight: 24,
-    marginTop: 14,
-  },
   nameText: {
-    fontSize: 20,
-    fontFamily: 'Pretendard-Bold',
-    lineHeight: 28,
+    color: '#F8F5CC',
+    fontSize: 16,
+    lineHeight: 24,
+    fontFamily: 'GalmuriMono9',
+    letterSpacing: -0.01,
     marginTop: 2,
   },
   emailText: {
-    fontSize: 14,
-    fontFamily: 'Pretendard-Regular',
-    lineHeight: 20,
+    color: '#F8F5CC',
+    fontSize: 16,
+    lineHeight: 24,
+    fontFamily: 'GalmuriMono9',
+    letterSpacing: -0.01,
     marginTop: 4,
-  },
-  carbohydrateBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    borderRadius: 10,
-  },
-  carbohydrateBoxText: {
-    fontSize: 14,
-    fontFamily: 'Pretendard-Regular',
-    lineHeight: 20,
-  },
-  carbohydrateBoxValueText: {
-    fontSize: 16,
-    fontFamily: 'Pretendard-Bold',
-    lineHeight: 24,
-  },
-  coinBox: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    gap: 4,
-    marginTop: 20,
-    backgroundColor: '#FFF0D1',
-    borderRadius: 10,
-    paddingHorizontal: 20,
-    paddingVertical: 13,
-  },
-  coinText: {
-    fontSize: 16,
-    fontFamily: 'Pretendard-Regular',
-    lineHeight: 24,
-  },
-  coinNumber: {
-    fontSize: 16,
-    fontFamily: 'Pretendard-Bold',
-    lineHeight: 24,
   },
   listBox: {
     width: '100%',
     paddingHorizontal: 20,
-    paddingVertical: 13,
+    paddingVertical: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   listText: {
-    fontSize: 16,
-    fontFamily: 'Pretendard-Regular',
-    lineHeight: 24,
-    color: '#212121',
-  },
-  underText: {
+    color: '#F8F5CC',
     fontSize: 14,
-    fontFamily: 'Pretendard-Regular',
-    lineHeight: 20,
+    lineHeight: 22,
+    fontFamily: 'GalmuriMono9',
+    letterSpacing: -0.1,
   },
 });
 

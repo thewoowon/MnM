@@ -48,3 +48,6 @@ export { default as RefreshIcon } from './RefreshIcon';
 export { default as BookMarkIcon } from './BookMarkIcon';
 export { default as ProfileIcon } from './ProfileIcon';
 export { default as RightArrowIcon } from './RightArrowIcon';
+export { default as MenuIcon } from './MenuIcon';
+export { default as ImageIcon } from './ImageIcon';
+export { default as BetweenIcon } from './BetweenIcon';

@@ -79,7 +79,7 @@ const MainSelectScreen = ({ navigation, route }: any) => {
       />
       <SafeAreaView style={[styles.backgroundStyle]}>
         <Header
-          title="가치"
+          title=""
           onPress={() => navigation.goBack()}
           isBack={true}
         />

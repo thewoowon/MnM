@@ -215,7 +215,7 @@ const MainScreen = ({ navigation, route }: any) => {
                       width: '100%',
                       fontSize: 16,
                       lineHeight: 24,
-                      fontFamily: 'GalmuriMono9',
+                      fontFamily: 'Pretendard-Regular',
                       marginTop: 72,
                       backgroundColor: 'transparent',
                       color: '#F8F5CC',

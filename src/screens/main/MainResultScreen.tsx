@@ -18,7 +18,7 @@ import PrimaryButton from '@components/atoms/buttons/PrimaryButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Movie from '../../type/movie';
 import { useForm } from '@contexts/FormContext';
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect, CommonActions } from '@react-navigation/native';
 import LeftTextHeader from '@components/layout/LeftTextHeader';
 import { BookMarkIcon, RefreshIcon } from '@components/Icons';
 import ImageMaskViewer from '@components/molecules/ImageMaskViewer';
@@ -92,6 +92,13 @@ const MainResultScreen = ({ navigation, route }: any) => {
         backgroundColor={colors.primary}
         translucent={false}
       />
+      {response.movies[movieIndex]?.url && (
+        <Image
+          source={{ uri: response.movies[movieIndex].url }}
+          style={styles.backgroundImage}
+          blurRadius={10}
+        />
+      )}
       <SafeAreaView style={[styles.backgroundStyle]}>
         <LeftTextHeader
           title="얻고싶은 것 다시 선택"
@@ -175,26 +182,7 @@ const MainResultScreen = ({ navigation, route }: any) => {
                           height: 555,
                         }}
                       >
-                        {/* <ImageMaskViewer /> */}
-                        <Image
-                          source={require('@assets/images/movie_image_main.png')}
-                          style={{ width: '100%', height: '100%' }}
-                          resizeMode="contain"
-                        />
-                      </View>
-                      <View>
-                        <Text style={styles.mainText}>
-                          제목: {response.movies[movieIndex]?.name}
-                        </Text>
-                        <Text style={styles.mainText}>
-                          감독: {response.movies[movieIndex].director}
-                        </Text>
-                        <Text style={styles.mainText}>
-                          출연: {response.movies[movieIndex].cast}
-                        </Text>
-                        <Text style={styles.mainText}>
-                          {response.movies[movieIndex].summary}
-                        </Text>
+                        <ImageMaskViewer movie={response.movies[movieIndex]} />
                       </View>
                     </View>
                   )}
@@ -238,9 +226,20 @@ const MainResultScreen = ({ navigation, route }: any) => {
                         }}
                         onPress={() => {
                           saveTicket(response.movies[movieIndex]);
-                          navigation.navigate('Ticket', {
-                            screen: 'TicketScreen',
-                          });
+                          navigation.dispatch(
+                            CommonActions.reset({
+                              index: 0,
+                              routes: [
+                                {
+                                  name: 'Ticket',
+                                  state: {
+                                    routes: [{ name: 'TicketScreen' }],
+                                    index: 0,
+                                  },
+                                },
+                              ],
+                            }),
+                          );
                         }}
                       >
                         <BookMarkIcon color="#FFFFFF" />
@@ -279,6 +278,16 @@ const MainResultScreen = ({ navigation, route }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: '100%',
+    height: '100%',
+    opacity: 0.1,
   },
   backgroundStyle: {
     flex: 1,

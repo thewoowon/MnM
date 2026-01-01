@@ -27,6 +27,11 @@ const MyPageScreen = ({ navigation, route }: any) => {
   const { setIsAuthenticated } = useAuth();
   const { user } = useUser();
 
+  const deleteAccount = async () => {
+    const response = await customAxios.delete(`${API_PREFIX}/users/me`);
+    return response.data;
+  };
+
   return (
     <View
       style={[
@@ -103,6 +108,24 @@ const MyPageScreen = ({ navigation, route }: any) => {
             <Text style={styles.listText}>로그아웃</Text>
             <RightChevronIcon color="#212121" />
           </Pressable>
+          <Pressable
+            style={styles.listBox}
+            onPress={async () => {
+              const result = await confirm(
+                '회원탈퇴',
+                '정말 회원탈퇴 하시겠습니까?',
+              );
+              if (result) {
+                await deleteAccount();
+                Alert.alert('회원탈퇴가 완료되었습니다.');
+                await logout();
+                setIsAuthenticated(false);
+              }
+            }}
+          >
+            <Text style={styles.listText}>회원탈퇴</Text>
+            <RightChevronIcon color="#212121" />
+          </Pressable>
         </View>
       </SafeAreaView>
     </View>
@@ -153,7 +176,7 @@ const styles = StyleSheet.create({
   listBox: {
     width: '100%',
     paddingHorizontal: 20,
-    paddingVertical: 16,
+    paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

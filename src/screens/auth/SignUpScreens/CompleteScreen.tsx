@@ -46,7 +46,7 @@ const CompleteScreen = ({ navigation, route }: any) => {
               alignItems: 'center',
             }}
           >
-            <Text style={styles.headerText}>무비앤미에 오신것을</Text>
+            <Text style={styles.headerText}>영화앤미에 오신것을</Text>
             <Text style={styles.headerText}>환영합니다.</Text>
           </View>
         </View>
@@ -57,7 +57,7 @@ const CompleteScreen = ({ navigation, route }: any) => {
           }}
         >
           <PrimaryButton
-            title="무비앤미 시작하기"
+            title="영화앤미 시작하기"
             onPress={handleNext}
             style={{
               backgroundColor: '#FFFFFF',

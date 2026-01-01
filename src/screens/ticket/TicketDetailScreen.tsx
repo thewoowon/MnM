@@ -17,6 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 import LeftTextHeader from '@components/layout/LeftTextHeader';
 import { Ticket } from '../../type/ticket';
+import ImageMaskViewer from '@components/molecules/ImageMaskViewer';
 
 const TicketDetailScreen = ({ navigation, route }: any) => {
   const { ticketId } = route.params;
@@ -31,6 +32,7 @@ const TicketDetailScreen = ({ navigation, route }: any) => {
       const response = await customAxios.get(
         `${API_PREFIX}/tickets/${ticketId}`,
       );
+      console.log('Fetched ticket detail:', response.data);
       setTicket(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -58,9 +60,16 @@ const TicketDetailScreen = ({ navigation, route }: any) => {
         backgroundColor={colors.primary}
         translucent={false}
       />
+      {ticket?.movie?.url && (
+        <Image
+          source={{ uri: ticket.movie.url }}
+          style={styles.backgroundImage}
+          blurRadius={10}
+        />
+      )}
       <SafeAreaView style={[styles.backgroundStyle]}>
         <LeftTextHeader
-          title="얻고싶은 것 다시 선택"
+          title="보관한 영화"
           onPress={() => navigation.goBack()}
           isBack={true}
         />
@@ -107,12 +116,12 @@ const TicketDetailScreen = ({ navigation, route }: any) => {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 60,
+                    paddingBottom: 40,
                   }}
                 >
                   <View style={{ marginTop: 32 }}>
                     <Text style={styles.summary}>{ticket?.explanation}</Text>
                   </View>
-
                   <View
                     style={{
                       display: 'flex',
@@ -146,26 +155,7 @@ const TicketDetailScreen = ({ navigation, route }: any) => {
                         height: 555,
                       }}
                     >
-                      {/* <ImageMaskViewer /> */}
-                      <Image
-                        source={require('@assets/images/movie_image_main.png')}
-                        style={{ width: '100%', height: '100%' }}
-                        resizeMode="contain"
-                      />
-                    </View>
-                    <View>
-                      <Text style={styles.mainText}>
-                        제목: {ticket?.movie.name}
-                      </Text>
-                      <Text style={styles.mainText}>
-                        감독: {ticket?.movie.director}
-                      </Text>
-                      <Text style={styles.mainText}>
-                        출연: {ticket?.movie.cast}
-                      </Text>
-                      <Text style={styles.mainText}>
-                        {ticket?.movie.summary}
-                      </Text>
+                      <ImageMaskViewer movie={ticket?.movie} />
                     </View>
                   </View>
                 </View>
@@ -181,6 +171,16 @@ const TicketDetailScreen = ({ navigation, route }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: '100%',
+    height: '100%',
+    opacity: 0.1,
   },
   backgroundStyle: {
     flex: 1,

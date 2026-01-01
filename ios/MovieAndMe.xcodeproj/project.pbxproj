@@ -7,42 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D44F6B1FC48542EBB956B579 /* libPods-MovieAndMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */; };
-		D6742066E582310779850DC0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		59D9961873B2449F92FF2F47 /* Galmuri11-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */; };
-		0EDA41B5FAD44114AA3093A6 /* Galmuri11-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */; };
 		08EF67F857984872B5E5DC2A /* Galmuri11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */; };
-		EB926EA08F3047739388EBB6 /* Galmuri14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */; };
+		0B9A594960124A0BB94970BB /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7C2CCB72EF64B3D8CA89AF8 /* Pretendard-Black.otf */; };
+		0EDA41B5FAD44114AA3093A6 /* Galmuri11-Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */; };
+		11B6145D48F04822B0304949 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA7723BF0A6A4F51A2B35E73 /* Pretendard-Light.otf */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2A4A8568C24145C1BFF40537 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E40224F5B4CD4D09A61B5D93 /* Pretendard-ExtraBold.otf */; };
+		3BB0180B25794A2093E21422 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10D5BEF19FA04272A5FB5272 /* Pretendard-ExtraLight.otf */; };
+		57B920AF5B6B47438548EA93 /* GalmuriMono9.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */; };
+		59D9961873B2449F92FF2F47 /* Galmuri11-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */; };
+		6C28E9638FE94A4C8CC6A7C1 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 301B11B27A84450C82590425 /* Pretendard-Bold.otf */; };
+		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
+		767D5C9D6F7D486896BC92DB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC01D0E1C87343E293C4F088 /* Pretendard-SemiBold.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		87A6AA79312845C2AC98A436 /* GalmuriMono7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */; };
+		BCB6FC2519F04B719CFE391F /* GalmuriMono11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */; };
 		C0EBC795422140ADAEA432FD /* Galmuri7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5A850B85F044BF89597055 /* Galmuri7.ttf */; };
 		D36B9B2C04254FFF80C14B3B /* Galmuri9.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */; };
-		BCB6FC2519F04B719CFE391F /* GalmuriMono11.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */; };
-		87A6AA79312845C2AC98A436 /* GalmuriMono7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */; };
-		57B920AF5B6B47438548EA93 /* GalmuriMono9.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */; };
+		D44F6B1FC48542EBB956B579 /* libPods-MovieAndMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */; };
+		D6742066E582310779850DC0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		D6AF68B7F8F1499EBBDFA5D5 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AD8671E3AEE24579846123DB /* Pretendard-Regular.otf */; };
+		DB90DE8E1C3C4B7BB0F3C19E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D881DD4DD5924A2C80BB18BD /* Pretendard-Thin.otf */; };
+		EB926EA08F3047739388EBB6 /* Galmuri14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */; };
+		F04E50147C99489BB136BB10 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F4CE60D0D48D5A18F4CFD /* Pretendard-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GalmuriMono11.ttf; path = ../src/assets/fonts/GalmuriMono11.ttf; sourceTree = "<group>"; };
 		0CAB1AD6B45C0C2E55E1085B /* Pods-MovieAndMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.release.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.release.xcconfig"; sourceTree = "<group>"; };
+		10D5BEF19FA04272A5FB5272 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-ExtraLight.otf"; path = "../src/assets/fonts/Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MovieAndMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAndMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MovieAndMe/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MovieAndMe/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = MovieAndMe/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GalmuriMono9.ttf; path = ../src/assets/fonts/GalmuriMono9.ttf; sourceTree = "<group>"; };
+		301B11B27A84450C82590425 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Bold.otf"; path = "../src/assets/fonts/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Galmuri14.ttf; path = ../src/assets/fonts/Galmuri14.ttf; sourceTree = "<group>"; };
 		550B03AC0E26215D65F349DB /* Pods-MovieAndMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieAndMe.debug.xcconfig"; path = "Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe.debug.xcconfig"; sourceTree = "<group>"; };
+		5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GalmuriMono7.ttf; path = ../src/assets/fonts/GalmuriMono7.ttf; sourceTree = "<group>"; };
+		5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Galmuri11.ttf; path = ../src/assets/fonts/Galmuri11.ttf; sourceTree = "<group>"; };
+		6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Galmuri9.ttf; path = ../src/assets/fonts/Galmuri9.ttf; sourceTree = "<group>"; };
+		6D5A850B85F044BF89597055 /* Galmuri7.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Galmuri7.ttf; path = ../src/assets/fonts/Galmuri7.ttf; sourceTree = "<group>"; };
 		73656842D2F0FE4B1E1F6209 /* libPods-MovieAndMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieAndMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MovieAndMe/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MovieAndMe/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Galmuri11-Condensed.ttf"; path = "../src/assets/fonts/Galmuri11-Condensed.ttf"; sourceTree = "<group>"; };
+		9E4F4CE60D0D48D5A18F4CFD /* Pretendard-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Medium.otf"; path = "../src/assets/fonts/Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		A7C2CCB72EF64B3D8CA89AF8 /* Pretendard-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Black.otf"; path = "../src/assets/fonts/Pretendard-Black.otf"; sourceTree = "<group>"; };
+		AD8671E3AEE24579846123DB /* Pretendard-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Regular.otf"; path = "../src/assets/fonts/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Galmuri11-Bold.ttf"; path = "../src/assets/fonts/Galmuri11-Bold.ttf"; sourceTree = "<group>"; };
+		D881DD4DD5924A2C80BB18BD /* Pretendard-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Thin.otf"; path = "../src/assets/fonts/Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		E40224F5B4CD4D09A61B5D93 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-ExtraBold.otf"; path = "../src/assets/fonts/Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		E975F6722F065060001303E6 /* MovieAndMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MovieAndMe.entitlements; path = MovieAndMe/MovieAndMe.entitlements; sourceTree = "<group>"; };
+		EC01D0E1C87343E293C4F088 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-SemiBold.otf"; path = "../src/assets/fonts/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */ = {isa = PBXFileReference; name = "Galmuri11-Bold.ttf"; path = "../src/assets/fonts/Galmuri11-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */ = {isa = PBXFileReference; name = "Galmuri11-Condensed.ttf"; path = "../src/assets/fonts/Galmuri11-Condensed.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */ = {isa = PBXFileReference; name = "Galmuri11.ttf"; path = "../src/assets/fonts/Galmuri11.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */ = {isa = PBXFileReference; name = "Galmuri14.ttf"; path = "../src/assets/fonts/Galmuri14.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6D5A850B85F044BF89597055 /* Galmuri7.ttf */ = {isa = PBXFileReference; name = "Galmuri7.ttf"; path = "../src/assets/fonts/Galmuri7.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */ = {isa = PBXFileReference; name = "Galmuri9.ttf"; path = "../src/assets/fonts/Galmuri9.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */ = {isa = PBXFileReference; name = "GalmuriMono11.ttf"; path = "../src/assets/fonts/GalmuriMono11.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */ = {isa = PBXFileReference; name = "GalmuriMono7.ttf"; path = "../src/assets/fonts/GalmuriMono7.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */ = {isa = PBXFileReference; name = "GalmuriMono9.ttf"; path = "../src/assets/fonts/GalmuriMono9.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA7723BF0A6A4F51A2B35E73 /* Pretendard-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Light.otf"; path = "../src/assets/fonts/Pretendard-Light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +79,7 @@
 		13B07FAE1A68108700A75B9A /* MovieAndMe */ = {
 			isa = PBXGroup;
 			children = (
+				E975F6722F065060001303E6 /* MovieAndMe.entitlements */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -67,6 +87,31 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
 			name = MovieAndMe;
+			sourceTree = "<group>";
+		};
+		172C4C5383484B81B89C189C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */,
+				8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */,
+				5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */,
+				34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */,
+				6D5A850B85F044BF89597055 /* Galmuri7.ttf */,
+				6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */,
+				02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */,
+				5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */,
+				2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */,
+				AD8671E3AEE24579846123DB /* Pretendard-Regular.otf */,
+				A7C2CCB72EF64B3D8CA89AF8 /* Pretendard-Black.otf */,
+				9E4F4CE60D0D48D5A18F4CFD /* Pretendard-Medium.otf */,
+				FA7723BF0A6A4F51A2B35E73 /* Pretendard-Light.otf */,
+				E40224F5B4CD4D09A61B5D93 /* Pretendard-ExtraBold.otf */,
+				301B11B27A84450C82590425 /* Pretendard-Bold.otf */,
+				D881DD4DD5924A2C80BB18BD /* Pretendard-Thin.otf */,
+				10D5BEF19FA04272A5FB5272 /* Pretendard-ExtraLight.otf */,
+				EC01D0E1C87343E293C4F088 /* Pretendard-SemiBold.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -116,23 +161,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		172C4C5383484B81B89C189C /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				D00863DF044D4F25AD6506BB /* Galmuri11-Bold.ttf */,
-				8249E679807D40FA82B43EF2 /* Galmuri11-Condensed.ttf */,
-				5FEA9A69B2124838A8A05D83 /* Galmuri11.ttf */,
-				34A16FB9B8AF4161A2008FEC /* Galmuri14.ttf */,
-				6D5A850B85F044BF89597055 /* Galmuri7.ttf */,
-				6A2C9727ABDD44B8B528FAE9 /* Galmuri9.ttf */,
-				02BB7B7FD558437DB187FF42 /* GalmuriMono11.ttf */,
-				5E8FB798E4E64546BA8ED4B7 /* GalmuriMono7.ttf */,
-				2A6D46E87592442CBCB7E18D /* GalmuriMono9.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -206,6 +234,15 @@
 				BCB6FC2519F04B719CFE391F /* GalmuriMono11.ttf in Resources */,
 				87A6AA79312845C2AC98A436 /* GalmuriMono7.ttf in Resources */,
 				57B920AF5B6B47438548EA93 /* GalmuriMono9.ttf in Resources */,
+				D6AF68B7F8F1499EBBDFA5D5 /* Pretendard-Regular.otf in Resources */,
+				0B9A594960124A0BB94970BB /* Pretendard-Black.otf in Resources */,
+				F04E50147C99489BB136BB10 /* Pretendard-Medium.otf in Resources */,
+				11B6145D48F04822B0304949 /* Pretendard-Light.otf in Resources */,
+				2A4A8568C24145C1BFF40537 /* Pretendard-ExtraBold.otf in Resources */,
+				6C28E9638FE94A4C8CC6A7C1 /* Pretendard-Bold.otf in Resources */,
+				DB90DE8E1C3C4B7BB0F3C19E /* Pretendard-Thin.otf in Resources */,
+				3BB0180B25794A2093E21422 /* Pretendard-ExtraLight.otf in Resources */,
+				767D5C9D6F7D486896BC92DB /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +257,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -253,9 +294,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MovieAndMe/Pods-MovieAndMe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -303,19 +348,21 @@
 			baseConfigurationReference = 550B03AC0E26215D65F349DB /* Pods-MovieAndMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MovieAndMe/MovieAndMe.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CXVHHLS2K4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MovieAndMe/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "무비앤미";
+				INFOPLIST_KEY_CFBundleDisplayName = "영화앤미";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -335,18 +382,20 @@
 			baseConfigurationReference = 0CAB1AD6B45C0C2E55E1085B /* Pods-MovieAndMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MovieAndMe/MovieAndMe.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CXVHHLS2K4;
 				INFOPLIST_FILE = MovieAndMe/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "무비앤미";
+				INFOPLIST_KEY_CFBundleDisplayName = "영화앤미";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

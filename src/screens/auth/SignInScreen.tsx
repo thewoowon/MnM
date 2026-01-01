@@ -34,6 +34,7 @@ import GoogleAuthModule, {
   GoogleUser,
   useGoogleAuth,
 } from '@thewoowon/google-rn';
+import { appleAuth } from '@invertase/react-native-apple-authentication';
 
 const Gap = (): ReactElement => <View style={{ marginTop: 24 }} />;
 const ResponseJsonText = ({
@@ -79,8 +80,84 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
   const { user, loading, signIn, signOut, isAuthenticated, getAccessToken } =
     useGoogleAuth();
 
-  const handleSignIn = async () => {
+  const signInWithApple = async () => {
     try {
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
+      });
+
+      if (!appleAuthRequestResponse.identityToken) {
+        throw new Error('Apple Sign-In failed - No identity token');
+      }
+
+      // Apple에서 받은 데이터
+      const { identityToken, user: appleUserId, email, fullName } =
+        appleAuthRequestResponse;
+
+      const credentialState = await appleAuth.getCredentialStateForUser(appleUserId);
+
+      if (credentialState === appleAuth.State.AUTHORIZED) {
+        try {
+          console.log('Apple User Info:', { appleUserId, email, fullName, identityToken });
+
+          // Apple은 email을 최초 로그인시에만 제공
+          // 이후 로그인에서는 identityToken만 제공됨
+          if (email) {
+            // 최초 로그인 또는 email이 있는 경우
+            const verifyResponse = await verifyMutation({ email });
+            console.log('Verify Response:', verifyResponse);
+
+            if (verifyResponse.exists) {
+              // 기존 유저 로그인
+              await appleLoginMutation({
+                identityToken,
+                email,
+              });
+            } else {
+              // 신규 유저 회원가입
+              await appleSignUpMutation({
+                identityToken,
+                email,
+                name: fullName
+                  ? `${fullName.givenName || ''} ${fullName.familyName || ''}`.trim()
+                  : undefined,
+              });
+              navigation.navigate('SignUp');
+            }
+          } else {
+            // 재로그인 (email 정보 없음)
+            await appleLoginMutation({
+              identityToken,
+            });
+          }
+        } catch (error) {
+          console.error('Error during Apple social login flow:', error);
+          showToast(
+            '로그인 중 오류가 발생했습니다. 다시 시도해주세요.',
+            'error',
+          );
+        }
+      } else {
+        console.error('Apple login failed:', credentialState);
+        showToast('애플 로그인에 실패했습니다.', 'error');
+      }
+    } catch (error: any) {
+      if (error.code === appleAuth.Error.CANCELED) {
+        console.log('User canceled Apple Sign in');
+      } else {
+        console.error('Apple Sign-In error:', error);
+        showToast('애플 로그인 중 오류가 발생했습니다.', 'error');
+      }
+    }
+  };
+
+  const handleSignIn = async (name: ProviderType) => {
+    try {
+      if (name === 'APPLE') {
+        await signInWithApple();
+        return;
+      }
       await signIn();
     } catch (error) {
       console.error('[App] Sign in error:', error);
@@ -246,6 +323,86 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
     },
   });
 
+  const { mutateAsync: appleLoginMutation } = useMutation({
+    mutationFn: async ({
+      identityToken,
+      email,
+    }: {
+      identityToken: string;
+      email?: string;
+    }) => {
+      const response = await customAxios.post(`${API_PREFIX}/auth/apple`, {
+        identityToken,
+        email,
+      });
+
+      if (response.status !== 200) {
+        throw new Error('Failed to login with Apple account');
+      }
+
+      console.log('Apple Access token:', response.headers['authorization']);
+
+      await login({
+        access_token: response.headers['authorization'].replace('Bearer ', ''),
+        refresh_token: response.headers['refreshtoken'].replace(
+          'RefreshToken ',
+          '',
+        ),
+      });
+
+      return response.data;
+    },
+    onSuccess: () => {
+      console.log('Apple login successful');
+      setIsAuthenticated(true);
+    },
+    onError: error => {
+      console.error('Error during Apple login:', error);
+      showToast('애플 로그인에 실패했습니다. 다시 시도해주세요.', 'error');
+    },
+  });
+
+  const { mutateAsync: appleSignUpMutation } = useMutation({
+    mutationFn: async ({
+      identityToken,
+      email,
+      name,
+    }: {
+      identityToken: string;
+      email: string;
+      name?: string;
+    }) => {
+      const response = await customAxios.post(`${API_PREFIX}/auth/apple`, {
+        identityToken,
+        email,
+        name,
+      });
+
+      if (response.status !== 200) {
+        throw new Error('Failed to sign up with Apple account');
+      }
+
+      console.log('Apple Access token:', response.headers['authorization']);
+
+      await login({
+        access_token: response.headers['authorization'].replace('Bearer ', ''),
+        refresh_token: response.headers['refreshtoken'].replace(
+          'RefreshToken ',
+          '',
+        ),
+      });
+
+      return response.data;
+    },
+    onSuccess: () => {
+      console.log('Apple sign up successful');
+    },
+    onError: error => {
+      console.error('Error during Apple sign up:', error);
+      showToast('애플 회원가입에 실패했습니다. 다시 시도해주세요.', 'error');
+    },
+  });
+
   const handleLoginButtonClick = async () => {
     try {
       if (!user) {
@@ -271,13 +428,13 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
     }
   };
 
-  const socialLoginButton = () => {
+  const socialLoginButton = (name: ProviderType) => {
     return (
       <View style={styles.socialLoginWrapper}>
         <SocialLoginButton
-          name={'GOOGLE'}
+          name={name}
           onPress={() => {
-            handleSignIn();
+            handleSignIn(name);
           }}
         />
       </View>
@@ -319,12 +476,13 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
                 <View style={styles.headerContainer}>
                   <Text style={styles.title}>만나서 반가워요!</Text>
                   <Text style={styles.description}>
-                    무비앤미 서비스를 이용하려면 로그인해주세요.
+                    영화앤미 서비스를 이용하려면 로그인해주세요.
                   </Text>
                 </View>
                 <View style={styles.bottomContainer}>
                   <View style={styles.socialLoginContainer}>
-                    {socialLoginButton()}
+                    {socialLoginButton('GOOGLE')}
+                    {Platform.OS === 'ios' && socialLoginButton('APPLE')}
                   </View>
                 </View>
               </View>

@@ -22,6 +22,7 @@ type Movie = {
   director: string;
   summary: string;
   cast: string;
+  url: string;
   keywords: string[];
   created_at: string;
   updated_at: string;

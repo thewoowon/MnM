@@ -180,6 +180,9 @@ const MainResultScreen = ({ navigation, route }: any) => {
                           // maxWidth: 314,
                           width: '100%',
                           height: 555,
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
                         }}
                       >
                         <ImageMaskViewer movie={response.movies[movieIndex]} />

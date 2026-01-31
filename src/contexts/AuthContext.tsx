@@ -1,5 +1,5 @@
 import React, {createContext, useState, useEffect} from 'react';
-import {validateAccessToken, refreshAccessToken, logout} from '@services/auth'; // 경로는 필요에 따라 수정
+import {validateAccessToken, refreshAccessToken, logout} from '@screens/auth/auth'; // 경로는 필요에 따라 수정
 
 type AuthContextType = {
   isAuthenticated: boolean;

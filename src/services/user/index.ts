@@ -1,5 +1,5 @@
 import customAxios from '@axios/customAxios';
-import {getAccessToken} from '../auth/token';
+import {getAccessToken} from '../../screens/auth/auth/token';
 import {API_PREFIX} from '@env';
 import {useQuery} from '@tanstack/react-query';
 

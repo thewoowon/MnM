@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Platform } from 'react-native';
 import { API_PREFIX, API_URL } from '@env';
-import { getAccessToken, getRefreshToken, login } from '@services/auth';
+import { getAccessToken, getRefreshToken, login } from '@screens/auth/auth';
 
 const BASE_URL = Platform.select({
   ios: API_URL,

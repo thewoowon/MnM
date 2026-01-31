@@ -20,7 +20,7 @@ import { API_PREFIX } from '@env';
 import customAxios from '@axios/customAxios';
 import { useMutation } from '@tanstack/react-query';
 import { useToast } from '@contexts/ToastContext';
-import { login, logout } from '@services/auth';
+import { login, logout } from '@screens/auth/auth';
 import {
   uniqueNamesGenerator,
   adjectives,
@@ -35,6 +35,7 @@ import GoogleAuthModule, {
   useGoogleAuth,
 } from '@thewoowon/google-rn';
 import { appleAuth } from '@invertase/react-native-apple-authentication';
+import { LogoTitleIcon } from '@components/Icons';
 
 const Gap = (): ReactElement => <View style={{ marginTop: 24 }} />;
 const ResponseJsonText = ({
@@ -92,14 +93,25 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
       }
 
       // Apple에서 받은 데이터
-      const { identityToken, user: appleUserId, email, fullName } =
-        appleAuthRequestResponse;
+      const {
+        identityToken,
+        user: appleUserId,
+        email,
+        fullName,
+      } = appleAuthRequestResponse;
 
-      const credentialState = await appleAuth.getCredentialStateForUser(appleUserId);
+      const credentialState = await appleAuth.getCredentialStateForUser(
+        appleUserId,
+      );
 
       if (credentialState === appleAuth.State.AUTHORIZED) {
         try {
-          console.log('Apple User Info:', { appleUserId, email, fullName, identityToken });
+          console.log('Apple User Info:', {
+            appleUserId,
+            email,
+            fullName,
+            identityToken,
+          });
 
           // Apple은 email을 최초 로그인시에만 제공
           // 이후 로그인에서는 identityToken만 제공됨
@@ -120,7 +132,9 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
                 identityToken,
                 email,
                 name: fullName
-                  ? `${fullName.givenName || ''} ${fullName.familyName || ''}`.trim()
+                  ? `${fullName.givenName || ''} ${
+                      fullName.familyName || ''
+                    }`.trim()
                   : undefined,
               });
               navigation.navigate('SignUp');
@@ -453,14 +467,6 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
         translucent={true}
         backgroundColor="transparent"
       />
-      <View style={styles.topBackground}>
-        <Image
-          source={require('@assets/images/movie-and-me.png')}
-          style={{ width: '80%', height: '100%' }}
-          resizeMode="contain"
-        />
-      </View>
-      <View style={styles.bottomBackground} />
       <SafeAreaView style={styles.safeArea}>
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -471,20 +477,48 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
             keyboardShouldPersistTaps="handled"
             showsVerticalScrollIndicator={false}
           >
-            <View style={styles.contentWrapper}>
-              <View style={styles.contentContainer}>
-                <View style={styles.headerContainer}>
-                  <Text style={styles.title}>만나서 반가워요!</Text>
-                  <Text style={styles.description}>
-                    영화앤미 서비스를 이용하려면 로그인해주세요.
-                  </Text>
-                </View>
-                <View style={styles.bottomContainer}>
-                  <View style={styles.socialLoginContainer}>
-                    {socialLoginButton('GOOGLE')}
-                    {Platform.OS === 'ios' && socialLoginButton('APPLE')}
-                  </View>
-                </View>
+            <View
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <LogoTitleIcon />
+            </View>
+            <View
+              style={{
+                gap: 20,
+                paddingBottom: 76,
+              }}
+            >
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 27,
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    height: 1,
+                    backgroundColor: '#525252',
+                  }}
+                ></View>
+                <Text style={styles.description}>소셜로그인으로 계속하기</Text>
+                <View
+                  style={{
+                    flex: 1,
+                    height: 1,
+                    backgroundColor: '#525252',
+                  }}
+                ></View>
+              </View>
+              <View style={styles.socialLoginContainer}>
+                {socialLoginButton('GOOGLE')}
+                {Platform.OS === 'ios' && socialLoginButton('APPLE')}
               </View>
             </View>
           </ScrollView>
@@ -497,30 +531,14 @@ const SignInScreen = ({ navigation, route: _route }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  topBackground: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '45%',
-    backgroundColor: theme.colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  bottomBackground: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: '55%',
-    backgroundColor: 'white',
+    backgroundColor: '#1C1917',
   },
   safeArea: {
     flex: 1,
   },
   scrollContent: {
     flexGrow: 1,
+    paddingHorizontal: 20,
   },
   contentWrapper: {
     flex: 1,
@@ -554,7 +572,9 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 14,
-    color: '#666666',
+    color: '#FFFFFF',
+    lineHeight: 22,
+    fontFamily: 'Pretendard-Regular',
   },
   bottomContainer: {
     paddingTop: 20,

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
-import {useTheme} from '@contexts/ThemeContext';
-import Icon, {IconName} from '@components/atoms/icon/Icon';
-import {theme} from '@contexts/theme';
+import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+import { useTheme } from '@contexts/ThemeContext';
+import Icon, { IconName } from '@components/atoms/icon/Icon';
+import { theme } from '@contexts/theme';
 
 type Props = {
   name: keyof typeof IconStyle;
@@ -48,7 +48,7 @@ const SocialLoginButton: React.FC<Props> = ({
   style,
   disabled = false,
 }) => {
-  const {colors, fontFamily} = useTheme();
+  const { colors, fontFamily } = useTheme();
   const iconColor = disabled ? colors.disabled : IconStyle[name].textColor;
 
   return (
@@ -63,7 +63,8 @@ const SocialLoginButton: React.FC<Props> = ({
           borderColor: IconStyle[name].borderColor,
           borderWidth: IconStyle[name].borderColor ? 1 : 0,
         },
-      ]}>
+      ]}
+    >
       <Icon
         name={IconStyle[name].iconName as IconName}
         color={iconColor}
@@ -77,7 +78,8 @@ const SocialLoginButton: React.FC<Props> = ({
           fontFamily: fontFamily.bold,
           fontSize: 16,
           color: IconStyle[name].textColor,
-        }}>
+        }}
+      >
         {IconStyle[name].text}로 로그인하기
       </Text>
     </Pressable>
@@ -89,7 +91,6 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 8,
     paddingHorizontal: 20,
     height: 48,
     fontSize: 16,

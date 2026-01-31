@@ -51,3 +51,4 @@ export { default as RightArrowIcon } from './RightArrowIcon';
 export { default as MenuIcon } from './MenuIcon';
 export { default as ImageIcon } from './ImageIcon';
 export { default as BetweenIcon } from './BetweenIcon';
+export { default as LogoTitleIcon } from './LogoTitleIcon';

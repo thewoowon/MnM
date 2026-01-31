@@ -1,4 +1,4 @@
-package com.movieandme
+package com.lululala.mnm
 
 import android.app.Application
 import com.facebook.react.PackageList

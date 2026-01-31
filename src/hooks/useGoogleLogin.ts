@@ -1,6 +1,6 @@
-import {useState} from 'react';
-import {loginWithGoogle} from '@services/auth';
-import {GoogleAuthModule} from '@thewoowon/google-rn';
+import { useState } from 'react';
+import { loginWithGoogle } from '@screens/auth/auth';
+import GoogleAuthModule from '@thewoowon/google-rn';
 
 export const useGoogleLogin = () => {
   const [isLoading, setIsLoading] = useState(false);

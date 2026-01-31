@@ -20,7 +20,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import { useUser } from '@contexts/UserContext';
 import useAuth from '@hooks/useAuth';
-import { logout } from '@services/auth';
+import { logout } from '@screens/auth/auth';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
 export type RootStackParamList = {

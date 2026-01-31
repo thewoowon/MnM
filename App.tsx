@@ -3,7 +3,6 @@ import {
   Alert,
   Button,
   Image,
-  NativeModules,
   StatusBar,
   StyleSheet,
   Text,
@@ -11,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useGoogleAuth } from '@thewoowon/google-rn';
+import GoogleAuthModule, { useGoogleAuth } from '@thewoowon/google-rn';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { PerfMonitorProvider, useRenderCount } from 'react-native-perf-hud';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -23,7 +22,6 @@ import { ModalProvider, useModal } from '@contexts/ModalContext';
 import { SessionProvider } from '@contexts/SessionContext';
 
 // Google OAuth 설정
-const { GoogleAuthModule } = NativeModules;
 import {
   IOS_GOOGLE_CLIENT_ID,
   ANDROID_GOOGLE_CLIENT_ID,

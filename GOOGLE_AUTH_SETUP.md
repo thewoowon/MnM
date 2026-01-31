@@ -65,7 +65,7 @@ MovieAndMe 앱에서 Google 로그인을 사용하기 위한 설정 가이드입
 1. **OAuth 클라이언트 ID 만들기**
    - Application type: **Android**
    - Name: MovieAndMe Android
-   - Package name: `com.movieandme`
+   - Package name: `com.lululala.mnm`
    - SHA-1 인증서 지문 추가
 
 2. **SHA-1 인증서 지문 가져오기**

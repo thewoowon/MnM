@@ -14,7 +14,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { logout } from '@services/auth';
+import { logout } from '@screens/auth/auth';
 import { useQuery } from '@tanstack/react-query';
 import customAxios from '@axios/customAxios';
 import { API_PREFIX } from '@env';

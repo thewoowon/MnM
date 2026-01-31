@@ -1,11 +1,11 @@
-package com.movieandme
+package com.lululala.mnm
 
-import android.os.Bundle;
-import com.swmansion.rnscreens.fragment.restoration.RNScreensFragmentFactory;
+import android.os.Bundle
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import com.swmansion.rnscreens.fragment.restoration.RNScreensFragmentFactory
 
 class MainActivity : ReactActivity() {
 
@@ -20,13 +20,14 @@ class MainActivity : ReactActivity() {
    * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
-      DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+    DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 
   /**
-   * Add the highlighted code to the body of MainActivity class 
+   * Add the highlighted code to the body of MainActivity class
    */
   override fun onCreate(savedInstanceState: Bundle?) {
-    getSupportFragmentManager().setFragmentFactory(new RNScreensFragmentFactory());
-    super.onCreate(savedInstanceState);
+    // Kotlin에서는 new 키워드 없음, FragmentManager는 supportFragmentManager로 접근
+    supportFragmentManager.fragmentFactory = RNScreensFragmentFactory()
+    super.onCreate(savedInstanceState)
   }
 }
